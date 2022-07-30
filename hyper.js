@@ -10,8 +10,7 @@ module.exports = {
     // default font size in pixels for all tabs
     fontSize: 15,
     // font family with optional fallbacks
-    fontFamily:
-      'Fira Code, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'Consolas, "Lucida Console", monospace',
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
     // font weight for bold characters: 'normal' or 'bold'
@@ -21,7 +20,7 @@ module.exports = {
     // letter spacing as a relative unit
     letterSpacing: 0,
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+    cursorColor: 'rgb(0,146,254,0.8)',
     // terminal text color under BLOCK cursor
     cursorAccentColor: '#000',
     // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
@@ -34,22 +33,20 @@ module.exports = {
     // opacity is only supported on macOS
     backgroundColor: '#23292E',
     // terminal selection color
-    selectionColor: 'rgba(248,28,229,0.3)',
+    selectionColor: 'rgba(0,146,254,0.8)',
     // border color (window, tabs)
     // borderColor: '#23292E',
     // custom CSS to embed in the main window
     css: '',
     // custom CSS to embed in the terminal window
     termCSS: '',
-    // set custom startup directory (must be an absolute path)
-    workingDirectory: '',
     // if you're using a Linux setup which show native menus, set to false
     // default: `true` on Linux, `true` on Windows, ignored on macOS
-    showHamburgerMenu: '',
+    showHamburgerMenu: false,
     // set to `false` (without backticks and without quotes) if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
     // default: `true` (without backticks and without quotes) on Windows and Linux, ignored on macOS
-    showWindowControls: '',
+    showWindowControls: true,
     // custom padding (CSS format, i.e.: `top right bottom left`)
     padding: '12px 20px',
     colors: {
@@ -90,10 +87,12 @@ module.exports = {
     //
     // Cygwin
     // - Example: `C:\\cygwin64\\bin\\bash.exe`
-    shell: 'zsh',
+    shell: 'C:\\Windows\\System32\\wsl.exe',
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
-    shellArgs: ['--login'],
+    shellArgs: ['-d','Ubuntu'],
+    // set custom startup directory (must be an absolute path)
+    workingDirectory: '\\\\wsl.localhost\\Ubuntu\\home\\karlm\\code',
     // for environment variables
     env: {},
     // Supported Options:
@@ -143,6 +142,12 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
+	  "tab:new": "ctrl+t",
+	  "editor:copy": "ctrl+c",
+	  "editor:paste": "ctrl+v",
+	  "editor:moveEndLine": "win+right",
+	  "editor:moveBeginningLine": "win+left",
+	  "editor:break": "ctrl+d",
   },
 }
 //# sourceMappingURL=config-default.js.map
